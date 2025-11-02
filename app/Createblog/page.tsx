@@ -17,14 +17,18 @@ const CreateBlog: React.FC = () => {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<string>("");
+
   const initialBlogs: Blog[] =
     typeof window !== "undefined"
       ? JSON.parse(localStorage.getItem("myData") || "[]")
       : [];
+
   const [data, setData] = useState<Blog[]>(initialBlogs);
+
   useEffect(() => {
     localStorage.setItem("myData", JSON.stringify(data));
   }, [data]);
+
   const addData = () => {
     const currentDate = new Date().toLocaleDateString();
     const newData: Blog = {
@@ -45,7 +49,7 @@ const CreateBlog: React.FC = () => {
   return (
     <>
       <AppNavbar />
-      <div className="container bg-light" style={{ marginTop: "4rem" }}>
+      <div className="container bg-light" style={{ marginTop: "5rem" }}>
         <div className="row">
           <div className="col">
             <input

@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import AppNavbar from "./AppNavbar";
 import Button from "react-bootstrap/Button";
+// import { blogs } from "../data/blogs";
 
 interface Blog {
   id: number;
@@ -38,7 +39,7 @@ const BlogList: React.FC = () => {
   return (
     <div>
       <AppNavbar />
-      <div className="container bg-light" style={{ marginTop: "4rem" }}>
+      <div className="container bg-light" style={{ marginTop: "5rem" }}>
         <input
           type="text"
           className="form-control mb-2"
@@ -59,9 +60,7 @@ const BlogList: React.FC = () => {
                   height={250}
                 />
                 <div className="card-body">
-                  <h5 className="card-title">
-                    <strong>{item.title}</strong>
-                  </h5>
+                  <h5 className="card-title">{item.title}</h5>
                   <p className="card-text">
                     {expandedId === item.id
                       ? `${item.description.substring(0, 500)}...`
@@ -78,7 +77,9 @@ const BlogList: React.FC = () => {
                       </Button>
                     </Link>
                   </div>
-                  <small className="text-muted">{item.date}</small>
+                  <small className="text-muted">
+                    <u>{item.date}</u>
+                  </small>
                 </div>
               </div>
             </div>
