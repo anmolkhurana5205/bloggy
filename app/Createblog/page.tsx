@@ -79,6 +79,10 @@ const CreateBlog: React.FC = () => {
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             />
+            <span className="d-block text-sm text-muted mb-3">
+              (If the image is not visible after adding data try using images
+              from unsplash.com)
+            </span>
             <button onClick={addData} className="btn btn-primary mb-2">
               Add Data
             </button>
